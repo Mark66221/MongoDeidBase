@@ -129,84 +129,84 @@ namespace MongoDeidBase {
                 Console.WriteLine(ex.ToString());
                 return (-1);
             }
-}
-public static List<Root> DeserializeJsonFile(string inputFilePath, string inputFile) {
-    // Read the contents of the input file into a string
-    try {
-        var json = File.ReadAllText(inputFilePath + inputFile);
+        }
+        public static List<Root> DeserializeJsonFile(string inputFilePath, string inputFile) {
+            // Read the contents of the input file into a string
+            try {
+                var json = File.ReadAllText(inputFilePath + inputFile);
 
-        // Deserialize the JSON string into a list of objects of type Root
-        var jsonData = System.Text.Json.JsonSerializer.Deserialize<List<Root>>(json);
+                // Deserialize the JSON string into a list of objects of type Root
+                var jsonData = System.Text.Json.JsonSerializer.Deserialize<List<Root>>(json);
 
-        // Return the deserialized JSON data
-        return jsonData;
-    }
-    catch (Exception ex) {
-        Console.WriteLine(ex.ToString());
-        return null;
-    }
-}
-// Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
-public class Data {
-    public string className { get; set; }
-    public string courseTitle { get; set; }
-    public string courseUrl { get; set; }
-    public string subdomain { get; set; }
-    public string siteName { get; set; }
-    public string siteEmail { get; set; }
-    public string loginUrl { get; set; }
-    public string siteUrl { get; set; }
-    public string salutation { get; set; }
-    public Variables variables { get; set; }
-    public string firstname { get; set; }
-    public string lastname { get; set; }
-    public string email { get; set; }
-    public string fullName { get; set; }
-    public int userId { get; set; }
-    public string certificateUrl { get; set; }
-    public string days { get; set; }
-    public string enrolledUrl { get; set; }
-    public string loginKey { get; set; }
-    public string myCoursesUrl { get; set; }
-    public string fromAddr { get; set; }
-}
+                // Return the deserialized JSON data
+                return jsonData;
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+        // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
+        public class Data {
+            public string className { get; set; }
+            public string courseTitle { get; set; }
+            public string courseUrl { get; set; }
+            public string subdomain { get; set; }
+            public string siteName { get; set; }
+            public string siteEmail { get; set; }
+            public string loginUrl { get; set; }
+            public string siteUrl { get; set; }
+            public string salutation { get; set; }
+            public Variables variables { get; set; }
+            public string firstname { get; set; }
+            public string lastname { get; set; }
+            public string email { get; set; }
+            public string fullName { get; set; }
+            public int userId { get; set; }
+            public string certificateUrl { get; set; }
+            public string days { get; set; }
+            public string enrolledUrl { get; set; }
+            public string loginKey { get; set; }
+            public string myCoursesUrl { get; set; }
+            public string fromAddr { get; set; }
+        }
 
-public class EmailData {
-    public string className { get; set; }
-    public Data data { get; set; }
-    public string contextId { get; set; }
-    public object perms { get; set; }
-    public string contentId { get; set; }
-}
+        public class EmailData {
+            public string className { get; set; }
+            public Data data { get; set; }
+            public string contextId { get; set; }
+            public object perms { get; set; }
+            public string contentId { get; set; }
+        }
 
-public class Id {
-    [JsonPropertyName("$oid")]
-    public string oid { get; set; }
-}
+        public class Id {
+            [JsonPropertyName("$oid")]
+            public string oid { get; set; }
+        }
 
-public class Root {
-    public Id _id { get; set; }
-    public string className { get; set; }
-    public string emailClassName { get; set; }
-    public string subdomain { get; set; }
-    public string createdOn { get; set; }
-    public string sentOn { get; set; }
-    public string toEmail { get; set; }
-    public string fromEmail { get; set; }
-    public string fromName { get; set; }
-    public string subject { get; set; }
-    public string body { get; set; }
-    public bool html { get; set; }
-    public int failCount { get; set; }
-    public List<string> errors { get; set; }
-    public EmailData emailData { get; set; }
-    public string templateId { get; set; }
-    public string bcc { get; set; }
-}
+        public class Root {
+            public Id _id { get; set; }
+            public string className { get; set; }
+            public string emailClassName { get; set; }
+            public string subdomain { get; set; }
+            public string createdOn { get; set; }
+            public string sentOn { get; set; }
+            public string toEmail { get; set; }
+            public string fromEmail { get; set; }
+            public string fromName { get; set; }
+            public string subject { get; set; }
+            public string body { get; set; }
+            public bool html { get; set; }
+            public int failCount { get; set; }
+            public List<string> errors { get; set; }
+            public EmailData emailData { get; set; }
+            public string templateId { get; set; }
+            public string bcc { get; set; }
+        }
 
-public class Variables {
-    public string moduleCertificateUrl1 { get; set; }
-}
+        public class Variables {
+            public string moduleCertificateUrl1 { get; set; }
+        }
 
     }
 }

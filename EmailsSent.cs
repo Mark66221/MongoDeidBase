@@ -70,12 +70,12 @@ namespace MongoDeidBase {
                         toEmail = $"{tofirstname}.{tolastname}{emailSuffix}";
                         obj.toEmail = toEmail;
                     }
-                    //Determine toEmail value
+                    //Determine toName value
                     if (obj.toName == null) {
                         toEmail = "";
                     }
                     else {
-                        toName = $"{tofirstname}.{tolastname}{emailSuffix}";
+                        toName = $"{tofirstname} {tolastname}";
                         obj.toName = toName;
                     }
                     //Determine fromEmail value

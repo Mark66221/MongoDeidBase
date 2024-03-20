@@ -24,36 +24,66 @@ namespace MongoDeidBase {
 
             ColumnInformation colInfo = new ColumnInformation();
 
+            string firstname = "";
+            string lastname = "";
             string email = "";
-            string phone = "";
+            string fullName = "";
+            string toEmail = "";
+
+
+
             try {
                 // Read the JSON file
                 List<Root> jsonObj = DeserializeJsonFile(filepath, filename);
 
                 foreach (var obj in jsonObj) {
                     NbrRows++;
-                    //Determine phone value
-                    if (obj.fields.phone == null) {
-                        phone = "";
+                    //Determine firstname value
+                    if (obj.emailData.data.firstname == null) {
+                        firstname = "";
                     }
                     else {
                         colInfo = new ColumnInformation();
-                        colInfo.Name = "phone";
-                        colInfo.DataType = "PhoneNumber";
-                        phone = $"{RemoveSpecialCharacters(randomData.GetRandomValue(colInfo))}";
-                        obj.fields.phone = phone;
+                        colInfo.Name = "firstname";
+                        colInfo.DataType = "FirstName";
+                        firstname = $"{RemoveSpecialCharacters(randomData.GetRandomValue(colInfo))}";
+                        obj.emailData.data.firstname = firstname;
                     }
 
-                    //Determine email value
-                    if (obj.email == null) {
+                    if (obj.emailData.data.lastname == null) {
+                        lastname = "";
+                    }
+                    else {
+                        colInfo = new ColumnInformation();
+                        colInfo.Name = "lastname";
+                        colInfo.DataType = "LastName";
+                        lastname = $"{RemoveSpecialCharacters(randomData.GetRandomValue(colInfo))}";
+                        obj.emailData.data.lastname = lastname;
+                    }
+
+                    if (obj.emailData.data.fullName == null) {
+                        fullName = "";
+                    }
+                    else {
+                        fullName = $"{firstname} {lastname}";
+                        obj.emailData.data.fullName = fullName;
+                    }
+
+                    if (obj.emailData.data.email == null) {
                         email = "";
                     }
                     else {
-                        colInfo = new ColumnInformation();
-                        colInfo.Name = "email";
-                        colInfo.DataType = "Email";
-                        email = $"{RemoveSpecialCharacters(randomData.GetRandomValue(colInfo))}";
-                        obj.email = email;
+                        email = $"{firstname}.{lastname}{emailSuffix}";
+                        obj.emailData.data.email = email;
+                    }
+
+                    //Determine email value
+                    if (obj.toEmail == null) {
+                        toEmail = "";
+                    }
+                    else {
+                        toEmail = $"{firstname}.{lastname}{emailSuffix}"; 
+                        obj.toEmail = toEmail;
                     }
                 }
                 // Write modified JSON to a new file
@@ -81,24 +111,35 @@ namespace MongoDeidBase {
                 return null;
             }
         }
-        public class Fields {
+        // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
+        public class Data {
             public string className { get; set; }
-            public Fields fields { get; set; }
-            public Id _id { get; set; }
-            public string createdOn { get; set; }
-            public string updatedOn { get; set; }
-            public string om_optin_id { get; set; }
-            public string phone { get; set; }
-            public string company { get; set; }
-            public string comment { get; set; }
-            public string website { get; set; }
-            public string sellToClubs { get; set; }
-            public string sellToPros { get; set; }
-            public string termsAndConditions { get; set; }
-            public bool? agree { get; set; }
-            public string utmSource { get; set; }
-            public string utmMedium { get; set; }
-            public string utmCampaign { get; set; }
+            public string courseTitle { get; set; }
+            public string courseUrl { get; set; }
+            public string enrolledUrl { get; set; }
+            public string myCoursesUrl { get; set; }
+            public string setPasswordUrl { get; set; }
+            public string subdomain { get; set; }
+            public string siteName { get; set; }
+            public string siteEmail { get; set; }
+            public string loginUrl { get; set; }
+            public string siteUrl { get; set; }
+            public string salutation { get; set; }
+            public string loginKey { get; set; }
+            public string fromAddr { get; set; }
+            public string firstname { get; set; }
+            public string lastname { get; set; }
+            public string email { get; set; }
+            public string fullName { get; set; }
+            public int userId { get; set; }
+        }
+
+        public class EmailData {
+            public string className { get; set; }
+            public Data data { get; set; }
+            public string contextId { get; set; }
+            public List<object> perms { get; set; }
+            public string contentId { get; set; }
         }
 
         public class Id {
@@ -109,12 +150,21 @@ namespace MongoDeidBase {
         public class Root {
             public Id _id { get; set; }
             public string className { get; set; }
-            public string source { get; set; }
-            public string email { get; set; }
-            public Fields fields { get; set; }
+            public string emailClassName { get; set; }
+            public string subdomain { get; set; }
             public string createdOn { get; set; }
-            public string updatedOn { get; set; }
+            public string toEmail { get; set; }
+            public string fromEmail { get; set; }
+            public string fromName { get; set; }
+            public string subject { get; set; }
+            public string body { get; set; }
+            public bool html { get; set; }
+            public int failCount { get; set; }
+            public List<object> errors { get; set; }
+            public string templateId { get; set; }
+            public EmailData emailData { get; set; }
         }
+
 
     }
 }
