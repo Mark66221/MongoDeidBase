@@ -118,8 +118,12 @@ namespace MongoDeidBase {
             public string _id { get; set; }
         }
         public class Id {
-            public object oid { get; set; }
+            [JsonPropertyName("$oid")]
+            public string oid { get; set; }
         }
+        //public class Id {
+        //    public object oid { get; set; }
+        //}
         public class Owner {
             public string className { get; set; }
             public int userId { get; set; }

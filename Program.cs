@@ -34,54 +34,54 @@ namespace MongoDeidBase {
             int nbrRowsChanged = 0;
             try {
                 // 37,569 docs
-                ProgramUsers programUsers = new ProgramUsers();
-                nbrRowsChanged = programUsers.Deidentify_ProgramUsers(filePath, ProgramUsersFileName);
-                Console.WriteLine($"Modified JSON file {ProgramUsersFileName} has been created successfully. {nbrRowsChanged} records.");
+                //ProgramUsers programUsers = new ProgramUsers();
+                //nbrRowsChanged = programUsers.Deidentify_ProgramUsers(filePath, ProgramUsersFileName);
+                //Console.WriteLine($"Modified JSON file {ProgramUsersFileName} has been created successfully. {nbrRowsChanged} records.");
 
-                // 98879 docs
-                DataImportItems dataImportItems = new DataImportItems();
-                nbrRowsChanged = dataImportItems.Deidentify_DataImportItems(filePath, DataImportItemsFileName);
-                Console.WriteLine($"Modified JSON file {DataImportItemsFileName} has been created successfully. {nbrRowsChanged} records.");
+                //// 98879 docs
+                //DataImportItems dataImportItems = new DataImportItems();
+                //nbrRowsChanged = dataImportItems.Deidentify_DataImportItems(filePath, DataImportItemsFileName);
+                //Console.WriteLine($"Modified JSON file {DataImportItemsFileName} has been created successfully. {nbrRowsChanged} records.");
 
-                // 14  docs 
-                EmailErrors emailErrors = new EmailErrors();
-                nbrRowsChanged = emailErrors.Deidentify_EmailErrors(filePath, EmailErrorsFileName);
-                Console.WriteLine($"Modified JSON file {EmailErrorsFileName} has been created successfully. {nbrRowsChanged} records.");
+                //// 14  docs 
+                //EmailErrors emailErrors = new EmailErrors();
+                //nbrRowsChanged = emailErrors.Deidentify_EmailErrors(filePath, EmailErrorsFileName);
+                //Console.WriteLine($"Modified JSON file {EmailErrorsFileName} has been created successfully. {nbrRowsChanged} records.");
 
-                // 1  docs 
-                EmailQueue emailQueue = new EmailQueue();
-                nbrRowsChanged = emailQueue.Deidentify_EmailQueue(filePath, EmailQueueFileName);
-                Console.WriteLine($"Modified JSON file {EmailQueueFileName} has been created successfully. {nbrRowsChanged} records.");
+                //// 1  docs 
+                //EmailQueue emailQueue = new EmailQueue();
+                //nbrRowsChanged = emailQueue.Deidentify_EmailQueue(filePath, EmailQueueFileName);
+                //Console.WriteLine($"Modified JSON file {EmailQueueFileName} has been created successfully. {nbrRowsChanged} records.");
 
-                //  4,534,786 docs (resized by hand to 378,914 documents
-                EmailsSent emailsSent = new EmailsSent();
-                nbrRowsChanged = emailsSent.Deidentify_EmailsSent(filePath, EmailsSentFileName);
-                Console.WriteLine($"Modified JSON file {EmailsSentFileName} has been created successfully. {nbrRowsChanged} records.");
+                ////  4,534,786 docs (resized by hand to 378,914 documents
+                //EmailsSent emailsSent = new EmailsSent();
+                //nbrRowsChanged = emailsSent.Deidentify_EmailsSent(filePath, EmailsSentFileName);
+                //Console.WriteLine($"Modified JSON file {EmailsSentFileName} has been created successfully. {nbrRowsChanged} records.");
 
-                // 328 docs
-                InviteQueue inviteQueue = new InviteQueue();
-                nbrRowsChanged = inviteQueue.Deidentify_InviteQueue(filePath, InviteQueueFileName);
-                Console.WriteLine($"Modified JSON file {InviteQueueFileName} has been created successfully. {nbrRowsChanged} records.");
+                //// 328 docs
+                //InviteQueue inviteQueue = new InviteQueue();
+                //nbrRowsChanged = inviteQueue.Deidentify_InviteQueue(filePath, InviteQueueFileName);
+                //Console.WriteLine($"Modified JSON file {InviteQueueFileName} has been created successfully. {nbrRowsChanged} records.");
 
-                // 1601 docs  
-                PdfRequests pdfRequests = new PdfRequests();
-                nbrRowsChanged = pdfRequests.Deidentify_PdfRequests(filePath, PdfRequestsFileName);
-                Console.WriteLine($"Modified JSON file {PdfRequestsFileName} has been created successfully. {nbrRowsChanged} records.");
+                //// 1601 docs  
+                //PdfRequests pdfRequests = new PdfRequests();
+                //nbrRowsChanged = pdfRequests.Deidentify_PdfRequests(filePath, PdfRequestsFileName);
+                //Console.WriteLine($"Modified JSON file {PdfRequestsFileName} has been created successfully. {nbrRowsChanged} records.");
 
                 // 369774 docs
                 Profiles profiles = new Profiles();
                 nbrRowsChanged = profiles.Deidentify_Profiles(filePath, ProfilesFileName);
                 Console.WriteLine($"Modified JSON file {ProfilesFileName} has been created successfully. {nbrRowsChanged} records.");
 
-                // 115,535 docs
-                UserEnrollmentScormInfo userEnrollmentScormInfo = new UserEnrollmentScormInfo();
-                nbrRowsChanged = userEnrollmentScormInfo.Deidentify_UserEnrollmentScormInfo(filePath, UserEnrollmentScormInfoFileName);
-                Console.WriteLine($"Modified JSON file {UserEnrollmentScormInfoFileName} has been created successfully. {nbrRowsChanged} records.");
+                //// 115,535 docs
+                //UserEnrollmentScormInfo userEnrollmentScormInfo = new UserEnrollmentScormInfo();
+                //nbrRowsChanged = userEnrollmentScormInfo.Deidentify_UserEnrollmentScormInfo(filePath, UserEnrollmentScormInfoFileName);
+                //Console.WriteLine($"Modified JSON file {UserEnrollmentScormInfoFileName} has been created successfully. {nbrRowsChanged} records.");
 
-                // 825 docs
-                Waitlist waitlist = new Waitlist();
-                nbrRowsChanged = waitlist.Deidentify_Waitlist(filePath, WaitlistFileName);
-                Console.WriteLine($"Modified JSON file {WaitlistFileName} has been created successfully. {nbrRowsChanged} records.");
+                //// 825 docs
+                //Waitlist waitlist = new Waitlist();
+                //nbrRowsChanged = waitlist.Deidentify_Waitlist(filePath, WaitlistFileName);
+                //Console.WriteLine($"Modified JSON file {WaitlistFileName} has been created successfully. {nbrRowsChanged} records.");
 
 
 
